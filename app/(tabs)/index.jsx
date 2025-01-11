@@ -18,11 +18,13 @@ export default function HomeScreen() {
     } catch (error) {
       console.error('Logout failed: ', error);
     }
+
+    //Get Category List
   };
 
   return (
     <View>
-      <Text>HomeScreen1</Text>
+      <Text>HomeScreen</Text>
       
       <Button title='Logout' onPress={handleLogout} />
     </View>
