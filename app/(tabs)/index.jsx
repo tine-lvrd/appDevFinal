@@ -22,7 +22,7 @@ export default function HomeScreen() {
 
   return (
     <View>
-      <Text>HomeScreen</Text>
+      <Text>HomeScreen1</Text>
       
       <Button title='Logout' onPress={handleLogout} />
     </View>
