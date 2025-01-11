@@ -1,7 +1,7 @@
 import { gql, request } from 'graphql-request'
 
 const MASTER_URL=;
-const getCategory=ansync()=>{
+const getCategory=async()=>{
     const query=gql`
     query GetCategory {
         categories {
