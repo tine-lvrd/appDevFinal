@@ -44,7 +44,7 @@ export default function signIn() {
     
   return (
     <View style={{padding: 25}}>
-      <Text style={styles.textHeader}>Lets Sign You In!</Text>
+      <Text style={styles.textHeader}>Lets Sign You In! 3</Text>
       <Text style={styles.subHeader}>Welcome Back  
         <Text style={{color:Colors.PRIMARY, fontWeight:'bold'}}> LearnMate!</Text></Text>
       <Text style={styles.text}>Good to See You Again</Text>
