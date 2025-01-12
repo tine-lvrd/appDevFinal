@@ -7,6 +7,7 @@ export default function CategoryList({categories}) {
     const [activeIndex,setActiveIndex]=useState();
   return (
     <View style={{marginTop:20}}>
+        <Text style={{fontFamily:'outfit-medium',fontSize:20,marginBottom:5,color:Colors.PRIMARY}}>Category</Text>
       <FlatList
         data={categories}
         horizontal={true}
