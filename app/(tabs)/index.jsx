@@ -35,7 +35,7 @@ export default function HomeScreen() {
   return (
     <View>
       <Text>HomeScreen</Text>
-      
+      <Header></Header>
       <Button title='Logout' onPress={handleLogout} />
     </View>
   );
