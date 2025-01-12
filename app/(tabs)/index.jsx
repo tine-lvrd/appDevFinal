@@ -6,6 +6,7 @@ import { Redirect } from 'expo-router'
 import { useRouter } from 'expo-router'
 import { RemoveLocalStorage } from '../../service/Storage'
 import GlobalApi from './../Utils/GlobalApi' //needs editing (steven)
+import CategoryList from '../Component(addkomuna(steven)/CategoryList'
 export default function HomeScreen() {
 
   const router = useRouter();
@@ -35,7 +36,7 @@ export default function HomeScreen() {
   return (
     <View>
       <Text>HomeScreen</Text>
-      <Header></Header>
+      <CategoryList categories={categories}/>
       <Button title='Logout' onPress={handleLogout} />
     </View>
   );
