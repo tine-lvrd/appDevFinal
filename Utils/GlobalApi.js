@@ -1,9 +1,11 @@
 import { gql, request } from 'graphql-request'
-
+//kulang pa ng display category
+//need pa ayusin yung sa hygraph
 const getCourseList=asyc()=>{
     const query=gql'
-    query MyQuery {
-        courseLists(first: 50, orderBy: createdAt_DESC) {
+
+    query query {
+        getCourseList(first: 50, orderBy: createdAt_DESC) {
             author
             description
             demoUrl
