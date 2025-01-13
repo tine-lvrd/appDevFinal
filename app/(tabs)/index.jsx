@@ -1,10 +1,12 @@
-import { View, Text, Button } from 'react-native'
+import { View, Text, Button, StyleSheet } from 'react-native'
 import React from 'react'
 import { signOut } from 'firebase/auth'
 import { auth } from '../../config/FirebaseConfig'
 import { Redirect } from 'expo-router'
 import { useRouter } from 'expo-router'
 import { RemoveLocalStorage } from '../../service/Storage'
+import Header from '../Components/Header'
+
 
 export default function HomeScreen() {
 
@@ -21,10 +23,10 @@ export default function HomeScreen() {
   };
 
   return (
-    <View>
-      <Text>HomeScreen</Text>
+    <View style={{padding: 20,marginTop:13, backgroundColor:'white'}}>
+      <Header/>
       
-      <Button title='Logout' onPress={handleLogout} />
+      {/* <Button title='Logout' onPress={handleLogout} /> */}
     </View>
   );
 }
