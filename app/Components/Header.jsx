@@ -30,9 +30,9 @@ export default function Header() {
       }}>
 
         <Image source={require('./../../assets/images/img2.jpg')}
-        style={{width:45,height:40}}/>
+        style={{width:45,height:30,marginBottom:5}}/>
 
-        <Text style={{fontSize:18,marginTop:10,textAlign:'center'}}>Welcome <Text style={{fontWeight:'bold',color:'#640D5F'}}>{user?.displayName}!</Text>
+        <Text style={{fontSize:18,marginTop:5,textAlign:'center'}}>Welcome <Text style={{fontWeight:'bold'}}>{user?.displayName}</Text>
         </Text>
       </View>
       
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     borderColor:Colors.TEXTHEADING,
     padding:7,
     borderRadius:40,
-    marginTop:25,
+    marginTop:15,
     display:'flex',
     flexDirection:'row',
     gap:7,
