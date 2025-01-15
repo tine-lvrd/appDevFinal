@@ -7,7 +7,7 @@ export default function CategoryList({ categories }) {
   const [activeIndex, setActiveIndex] = useState(null); // Ensure null is the initial state
 
   return (
-    <View style={{ marginTop: 20 }}>
+    <View style={{ marginTop:8 }}>
         <SectionHeading heading={'Category'}/>
         
       <FlatList
@@ -41,21 +41,21 @@ export default function CategoryList({ categories }) {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: 'white',
-    padding: 15,
+    padding: 10,
     marginRight: 10,
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 15,
   },
   image: {
-    width: 40,
-    height: 40,
-    borderRadius: 99,
+    width: 20,
+    height: 20,
+    borderRadius: 70,
     resizeMode: 'contain', // Use resizeMode for compatibility
   },
   text: {
     textAlign: 'center',
     marginTop:4,
-    width:55
+    width:60
   },
 });

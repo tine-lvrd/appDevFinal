@@ -1,13 +1,14 @@
 import { View, Text, StyleSheet, Image, TextInput } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { getLocalStorage } from '../../service/Storage'
-import AntDesign from '@expo/vector-icons/AntDesign';
+import AntDesign from '@expo/vector-icons/AntDesign'
 import Colors from '../Constants/Colors'
+import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 
 
 export default function Header() {
 
-    const [user,setUser]=useState()
+    const [user,setUser]=useState();
     useEffect(()=>{
         getUserDetails();
     },[])
@@ -24,15 +25,18 @@ export default function Header() {
     <View>
 
       <View style={{display:'flex',
-        flexDirection:'column',
+        flexDirection:'row',
         alignItems:'center',
-        justifyContent:'center'
+        justifyContent:'center',
+        marginRight:90,
+        paddingRight:10,
+        paddingTop:0,
+        gap:10,
       }}>
 
-        <Image source={require('./../../assets/images/img2.jpg')}
-        style={{width:45,height:30,marginBottom:5}}/>
+      <FontAwesome6 style={{textAlign:'center'}}name="computer" size={24} color="black" />
 
-        <Text style={{fontSize:18,marginTop:5,textAlign:'center'}}>Welcome <Text style={{fontWeight:'bold'}}>{user?.displayName}</Text>
+        <Text style={{fontSize:18,paddingBottom:5,textAlign:'center'}}>Hello <Text style={{fontWeight:'bold',color:'#640D5F'}}>{user?.displayName}</Text>
         </Text>
       </View>
       
@@ -42,8 +46,8 @@ export default function Header() {
       </View> */}
 
     <View style={styles.placeholder}>
-        <AntDesign name="search1" size={24} color="black" />
-        <TextInput placeholder='Search'/>
+        <AntDesign style={{marginLeft:5}}name="search1" size={24} color="black" />
+        <TextInput style={{fontSize:16}}placeholder='Search'/>
     </View>
     
     
@@ -55,11 +59,11 @@ export default function Header() {
 
 const styles = StyleSheet.create({
   placeholder:{
-    backgroundColor:Colors.PLACEHOLDER,
+    backgroundColor:'#F9F6EE',
     borderColor:Colors.TEXTHEADING,
     padding:7,
-    borderRadius:40,
-    marginTop:15,
+    borderRadius:10,
+    marginTop:10,
     display:'flex',
     flexDirection:'row',
     gap:7,

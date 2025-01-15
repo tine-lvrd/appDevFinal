@@ -14,5 +14,5 @@ export default function CourseList({courseList}) {
         <CourseItem course={item}/>
       )}/>
     </View>
-  )
+  );
 }

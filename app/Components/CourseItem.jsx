@@ -1,11 +1,11 @@
 import { View, Image, Text } from 'react-native';
 import React from 'react';
-import AntDesign from '@expo/vector-icons/AntDesign';
+import AntDesign from '@expo/vector-icons/AntDesign'
 
 export default function CourseItem({ course }) {
   return (
     <View style={{
-        backgroundColor:'gray',
+        backgroundColor:'#FAF9F6',
         width:260,
         marginRight:15,
         padding:10,
