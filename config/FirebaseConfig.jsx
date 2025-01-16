@@ -1,11 +1,20 @@
-// Import the functions you need from the SDKs you need
+// Import Firebase functions
 import { initializeApp } from "firebase/app";
-import { getAuth} from 'firebase/auth'
-import { getReactNativePersistence, initializeAuth } from 'firebase/auth';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { getAuth } from "firebase/auth";
+import { Platform } from "react-native";
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+let initializeAuth;
+let getReactNativePersistence;
+let AsyncStorage;
+
+// Conditionally import React Native modules
+if (Platform.OS !== "web") {
+  initializeAuth = require("firebase/auth").initializeAuth;
+  getReactNativePersistence = require("firebase/auth").getReactNativePersistence;
+  AsyncStorage = require("@react-native-async-storage/async-storage").default;
+}
+
+// Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyDF4iu-w60S6ORq8uQ0WMgsCrh-hyEAA1o",
   authDomain: "learning-hub-f4bd6.firebaseapp.com",
@@ -13,14 +22,20 @@ const firebaseConfig = {
   storageBucket: "learning-hub-f4bd6.firebasestorage.app",
   messagingSenderId: "897460974727",
   appId: "1:897460974727:web:578a4431384580f22b7422",
-  measurementId: "G-9QST8KKE9L"
+  measurementId: "G-9QST8KKE9L",
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-// Initialize Firebase Auth with AsyncStorage for persistence
-const auth = initializeAuth(app, {
-  persistence: getReactNativePersistence(AsyncStorage),
-});
+
+// Initialize Auth
+let auth;
+if (Platform.OS === "web") {
+  auth = getAuth(app); // Use web-friendly Firebase Auth
+} else {
+  auth = initializeAuth(app, {
+    persistence: getReactNativePersistence(AsyncStorage),
+  });
+}
 
 export { app, auth };

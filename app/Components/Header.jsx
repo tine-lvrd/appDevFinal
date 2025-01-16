@@ -6,6 +6,7 @@ import Colors from '../Constants/Colors'
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 
 
+
 export default function Header() {
 
     const [user,setUser]=useState();
@@ -24,21 +25,43 @@ export default function Header() {
     <>
     <View>
 
-      <View style={{display:'flex',
-        flexDirection:'row',
-        alignItems:'center',
-        justifyContent:'center',
-        marginRight:90,
-        paddingRight:10,
-        paddingTop:0,
-        gap:10,
-      }}>
+    <View
+  style={{
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 5,
+    gap: 10,
+  }}
+>
+  <FontAwesome6
+    name="computer"
+    size={24}
+    color="black"
+    style={{ marginLeft: 5, marginRight: 5 }} // Adjust left margin for spacing
+  />
+  <Text
+    style={{
+      fontSize: 18,
+      textAlign: 'left',
+      fontFamily: 'Lexend-Medium',
+      flexShrink: 1,
+      color:'#3D3D3D'
+    }}
+  >
+    Hello{' '}
+    <Text
+      style={{
+        fontFamily: 'Lexend-Bold',
+        color: '#640D5F',
+        flexWrap: 'wrap',
+      }}
+    >
+      {user?.displayName}
+    </Text>
+  </Text>
+</View>
 
-      <FontAwesome6 style={{textAlign:'center'}}name="computer" size={24} color="black" />
 
-        <Text style={{fontSize:18,paddingBottom:5,textAlign:'center'}}>Hello <Text style={{fontWeight:'bold',color:'#640D5F'}}>{user?.displayName}</Text>
-        </Text>
-      </View>
       
 
       {/* <View>
@@ -47,7 +70,7 @@ export default function Header() {
 
     <View style={styles.placeholder}>
         <AntDesign style={{marginLeft:5}}name="search1" size={24} color="black" />
-        <TextInput style={{fontSize:16}}placeholder='Search'/>
+        <TextInput style={{fontSize:16,fontFamily:'Lexend-ExtraLight'}}placeholder='Search'/>
     </View>
     
     

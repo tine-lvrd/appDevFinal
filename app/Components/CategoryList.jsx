@@ -7,7 +7,7 @@ export default function CategoryList({ categories }) {
   const [activeIndex, setActiveIndex] = useState(null); // Ensure null is the initial state
 
   return (
-    <View style={{ marginTop:8 }}>
+    <View style={{ marginTop:8}}>
         <SectionHeading heading={'Category'}/>
         
       <FlatList
@@ -56,6 +56,7 @@ const styles = StyleSheet.create({
   text: {
     textAlign: 'center',
     marginTop:4,
-    width:60
+    width:60,
+    fontFamily:'Lexend-Regular'
   },
 });

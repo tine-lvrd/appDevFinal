@@ -1,4 +1,4 @@
-import { View, Text, Button, StyleSheet } from 'react-native'
+import { View, Text, Button, StyleSheet, ScrollView } from 'react-native'
 import React from 'react'
 import { signOut } from 'firebase/auth'
 import { auth } from '../../config/FirebaseConfig'
@@ -11,9 +11,23 @@ import { useEffect, useState } from 'react'
 import CategoryList from '../Components/CategoryList'
 import SectionHeading from '../Components/SectionHeading'
 import CourseList from '../Components/CourseList'
+import { useFonts } from 'expo-font';
+
 
 
 export default function HomeScreen() {
+
+  const [loaded, error] = useFonts({
+    'Lexend-Black': require('./../../assets/fonts/Lexend-Black.ttf'),
+    'Lexend-Bold': require('./../../assets/fonts/Lexend-Bold.ttf'),
+    'Lexend-ExtraBold': require('./../../assets/fonts/Lexend-ExtraBold.ttf'),
+    'Lexend-ExtraLight': require('./../../assets/fonts/Lexend-ExtraLight.ttf'),
+    'Lexend-Light': require('./../../assets/fonts/Lexend-Light.ttf'),
+    'Lexend-Medium': require('./../../assets/fonts/Lexend-Medium.ttf'),
+    'Lexend-Regular': require('./../../assets/fonts/Lexend-Regular.ttf'),
+    'Lexend-SemiBold': require('./../../assets/fonts/Lexend-SemiBold.ttf'),
+    'Lexend-Thin': require('./../../assets/fonts/Lexend-Thin.ttf'),
+  });
 
   const router = useRouter();
 
@@ -51,18 +65,36 @@ export default function HomeScreen() {
   })  
  }
 
+ const getFilterCourseList=(tag)=>{
+    const result=courseList.filter((item)=>item.tag.includes(tag));
+    return result;
+ }
+
   return (
+  <ScrollView>
     <View style={{padding: 20,marginTop:13}}>
       <Header/>
 
       {/* Category List */}
       <CategoryList categories={categories}/>
 
-      {/* Course List */}
+      {/* All Course List */}
       <SectionHeading heading={'Latest Courses'}/>
       <CourseList courseList={courseList}/>
+
+      {/* Data Structure and Algorithm Course List */}
+      <SectionHeading heading={'JavaScript Course'}/>
+      <CourseList courseList={getFilterCourseList('javascript')}/>
+
+      {/* Popular Courses */}
+      <SectionHeading heading={'Popular Courses'} />
+      <CourseList courseList={getFilterCourseList('tailwindcsss')} />
       
       {/* <Button title='Logout' onPress={handleLogout} /> */}
     </View>
+  </ScrollView>
+
+    
   );
 }
+

@@ -23,7 +23,7 @@ const getCategory=async()=>{
 const getCourseList=async()=>{
     const query=gql`
     query MyQuery {
-  courseLists(first: 40, orderBy: createdAt_DESC) {
+    courseLists(first: 40, orderBy: createdAt_DESC) {
     author
     description
     demoUrl
@@ -37,7 +37,7 @@ const getCourseList=async()=>{
     banner {
       url
     }
-    chapters {
+    chapters(first: 20) {
       ... on Chapter {
         id
         name
