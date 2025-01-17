@@ -34,26 +34,28 @@ export default function Header() {
   }}
 >
   <FontAwesome6
-    name="computer"
-    size={24}
-    color="black"
+    name="laptop-code"
+    size={25}
+    color={Colors.CHAPTER_ICON}
     style={{ marginLeft: 5, marginRight: 5 }} // Adjust left margin for spacing
   />
   <Text
     style={{
       fontSize: 18,
+      marginBottom:6,
       textAlign: 'left',
       fontFamily: 'Lexend-Medium',
       flexShrink: 1,
-      color:'#3D3D3D'
+      color:Colors.PRIMARY
     }}
   >
     Hello{' '}
     <Text
       style={{
-        fontFamily: 'Lexend-Bold',
-        color: '#640D5F',
+        fontFamily: 'Lexend-SemiBold',
+        color: Colors.USER_HEADER,
         flexWrap: 'wrap',
+        fontSize:25
       }}
     >
       {user?.displayName}
@@ -69,7 +71,7 @@ export default function Header() {
       </View> */}
 
     <View style={styles.placeholder}>
-        <AntDesign style={{marginLeft:5}}name="search1" size={24} color="black" />
+        <AntDesign style={{marginLeft:5}}name="search1" size={24} color={Colors.CHAPTER_ICON} />
         <TextInput style={{fontSize:16,fontFamily:'Lexend-ExtraLight'}}placeholder='Search'/>
     </View>
     

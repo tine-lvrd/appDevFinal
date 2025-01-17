@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TextInput, TouchableOpacity, ToastAndroid } from 'react-native'
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, ToastAndroid, Image } from 'react-native'
 import React from 'react'
 import Colors from '../Constants/Colors'
 import { useRouter } from 'expo-router'
@@ -44,10 +44,14 @@ export default function signIn() {
     
   return (
     <View style={{padding: 25}}>
-      <Text style={styles.textHeader}>Lets Sign You In!</Text>
-      <Text style={styles.subHeader}>Welcome Back  
-        <Text style={{color:Colors.PRIMARY, fontWeight:'bold'}}> LearnMate!</Text></Text>
-      <Text style={styles.text}>Good to See You Again</Text>
+
+      <View style={styles.containerSignIn}>
+        <Image style={styles.signIn} source={require('./../../assets/images/signIn.png')}/>
+        <Text style={styles.textHeader}>Lets Sign You In!</Text>
+        <Text style={styles.subHeader}>Welcome Back  
+        <Text style={{color:Colors.CHAPTER_ICON,fontFamily:'Lexend-Bold'}}> LearnMate!</Text></Text>
+      </View>
+      
 
       <View>
         <TextInput placeholder='Email' style={styles.textInput}
@@ -65,6 +69,7 @@ export default function signIn() {
         <Text style={{
             textAlign:'center',
             fontSize:20,
+            fontFamily:'Lexend-Regular',
             color:'white'
         }}>Login</Text>
       </TouchableOpacity>
@@ -73,8 +78,9 @@ export default function signIn() {
       onPress={()=>router.push('login/signUp')}>
         <Text style={{
             textAlign:'center',
+            fontFamily:'Lexend-Regular',
             fontSize:20,
-            color:Colors.TEXT
+            color:Colors.PRIMARY,
         }}>Create Account</Text>
       </TouchableOpacity>
     </View>
@@ -84,34 +90,31 @@ export default function signIn() {
 const styles = StyleSheet.create({
   textHeader:{
     fontSize:30,
-    fontWeight:'bold',
-    textAlign:'center'
+    fontFamily:'Lexend-Bold',
+    textAlign:'center',
   },
   subHeader:{
-    fontWeight:'400',
+    fontFamily:'Lexend-Light',
     fontSize: 25,
     textAlign:'center'
   },
-  text:{
-    fontWeight:'300',
-    fontSize: 15,
-    textAlign:'center',
-    marginTop:15
-  },
   textInput:{
     padding:10,
-    borderWidth:1,
+    borderWidth:0.4,
     marginTop:25,
     fontSize:20,
     borderRadius:10,
     backgroundColor:Colors.PLACEHOLDER,
-    fontWeight:'300'
+    fontFamily:'Lexend-Light',
+    color:Colors.CHAPTER_ICON,
   },
   loginButton:{
     padding:20,
-    backgroundColor:Colors.PRIMARY,
+    backgroundColor:Colors.LOGIN_BUTTON,
     borderRadius:5,
     marginTop:30,
+    borderWidth:0.4
+    
   },
   createAccountButton:{
     padding:20,
@@ -120,5 +123,17 @@ const styles = StyleSheet.create({
     marginTop:30,
     borderWidth:1,
     borderColor:Colors.PRIMARY
+  },
+  signIn:{
+    width:110,
+    height:110,
+    objectFit:'cover',
+  },
+  containerSignIn:{
+    display:'flex',
+    alignItems:'center',
+    justifyContent:'center',
+    marginTop:8,
+    marginBottom:5
   }
 })

@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, Transparent } from 'react-native'
 import React from 'react'
 import { Image } from 'react-native'
 import Colors from '../Constants/Colors'
@@ -9,14 +9,26 @@ export default function LoginScreen() {
 
     const router=useRouter();
   return (
-    <View>
+    <View style={{display:'flex',alignItems:'center',marginTop:50,}}>
       <View>
-        <Image style={styles?.image} source={require('./../../assets/images/img1.jpg')}/>
+        <Image style={styles?.image} source={require('./../../assets/images/loginImage.jpg')}/>
       </View>
 
       <View style={{padding:20}}>
-            <Text style={{color:Colors.PRIMARY, fontSize:45, fontWeight:'300', textAlign:'center'}}>Welcome To <Text style={{color:"#C84C05", fontWeight:'bold'}}>Learn Hub</Text></Text>
-            <Text style={{color:Colors.PRIMARY, fontWeight:400,fontSize:15, textAlign:'center'}}>Ultimate Guide to Move Forward. Where Skills Define Future!</Text>
+            <Text style={{
+              color:Colors.PRIMARY,
+              fontFamily:'Lexend-Regular', 
+              fontSize:40,
+              color:Colors.PRIMARY, 
+              textAlign:'center'}}
+              >Welcome To <Text 
+              style={{
+                color:Colors.CHAPTER_ICON, 
+                fontWeight:'bold'}}
+                >Learn Hub</Text></Text>
+            <Text style={{color:Colors.PRIMARY, fontFamily:'Lexend-Regular',fontSize:15, textAlign:'center'}}>
+              Learn Programming Through Video: Where Knowledge Comes to Life and Skills Shape the Future!
+            </Text>
       
       <TouchableOpacity onPress={()=>router.push('login/signIn')}>
         <Text style={styles.button}>Continue</Text>
@@ -28,18 +40,25 @@ export default function LoginScreen() {
 
 const styles = StyleSheet.create({
   image:{
-    width:390,
-    height:420,
-    objectFit:'cover'
+    width:250,
+    height:250,
+    objectFit:'cover',
+    display:'flex',
+    alignItems:'center',
+    borderRadius:50,
+    objectFit:'contain',
+    borderWidth:0.5
   },
   button:{
-    backgroundColor:Colors.PRIMARY,
+    backgroundColor:Colors.BACKGROUND_BUTTON,
     padding: 20,
+    borderWidth:0.4,
+    borderColor:Colors.LOGIN_BUTTON,
     marginTop:15,
     borderRadius:10,
     textAlign:'center',
-    color:'white',
-    fontSize:20
-
+    color:Colors.LOGIN_BUTTON,
+    fontSize:20,
+    fontFamily:'Lexend-Regular'
   }
 })

@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TextInput, TouchableOpacity, ToastAndroid } from 'react-native'
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, ToastAndroid, Image } from 'react-native'
 import React from 'react'
 import Colors from '../Constants/Colors'
 import { useRouter } from 'expo-router'
@@ -56,12 +56,14 @@ export default function signUp() {
 
 
   return (
-    <View style={{padding: 25}}>
+    <View style={{padding:25}}>
+      <View style={{display:'flex',alignItems:'center'}}>
+        <Image source={require('./../../assets/images/signUp.png')} style={styles.imageSignUp}/>
+      </View>
       <Text style={styles.textHeader}>Create New Account</Text>
 
       <View>
-        <TextInput placeholder="Full Name"
-          style={styles.textInput}
+        <TextInput placeholder="Full Name" style={styles.textInput}
           value={userName} // Ensure this is set
           onChangeText={(value) => setUsername(value)}
         />
@@ -93,6 +95,7 @@ export default function signUp() {
         <Text style={{
             textAlign:'center',
             fontSize:20,
+            fontFamily:'Lexend-Light',
             color:'white'
         }}>Create Account
         </Text>
@@ -104,8 +107,9 @@ export default function signUp() {
 
         <Text style={{
             textAlign:'center',
-            fontSize:20,
-            color:Colors.TEXT
+            fontSize:18,
+            fontFamily:'Lexend-Light',
+            color:Colors.PRIMARY,
         }}>Already have an account? Sign in
         </Text>
 
@@ -117,8 +121,8 @@ export default function signUp() {
 const styles = StyleSheet.create({
   textHeader:{
     fontSize:30,
-    fontWeight:'bold',
-    textAlign:'center'
+    textAlign:'center',
+    fontFamily:'Lexend-SemiBold',
   },
   subHeader:{
     fontWeight:'400',
@@ -133,9 +137,10 @@ const styles = StyleSheet.create({
   },
   textInput:{
     padding:10,
-    borderWidth:1,
+    borderWidth:0.4,
     marginTop:25,
     fontSize:20,
+    fontFamily:'Lexend-Light',
     borderRadius:10,
     backgroundColor:Colors.PLACEHOLDER,
     fontWeight:'300'
@@ -153,5 +158,9 @@ const styles = StyleSheet.create({
     marginTop:30,
     borderWidth:1,
     borderColor:Colors.PRIMARY
+  },
+  imageSignUp:{
+    width:110,
+    height:110,
   }
 })

@@ -57,6 +57,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop:4,
     width:60,
-    fontFamily:'Lexend-Regular'
+    fontFamily:'Lexend-Regular',
+    color:Colors.USER_HEADER
   },
 });

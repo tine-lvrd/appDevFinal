@@ -90,7 +90,7 @@ export default function HomeScreen() {
       <SectionHeading heading={'Popular Courses'} />
       <CourseList courseList={getFilterCourseList('tailwindcsss')} />
       
-      {/* <Button title='Logout' onPress={handleLogout} /> */}
+      <Button title='Logout' onPress={handleLogout} />
     </View>
   </ScrollView>
 

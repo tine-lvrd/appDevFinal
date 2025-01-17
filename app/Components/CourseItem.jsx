@@ -1,7 +1,7 @@
 import { View, Image, Text } from 'react-native';
 import React from 'react';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
-
+import Colors from '../Constants/Colors'
 
 export default function CourseItem({ course }) {
   return (
@@ -43,7 +43,7 @@ export default function CourseItem({ course }) {
             
           }}>
 
-          <MaterialCommunityIcons name="book-open-page-variant" size={20} color="#454B1B"
+          <MaterialCommunityIcons name="book-open-page-variant" size={20} color={Colors.CHAPTER_ICON}
           style={{marginLeft:-4}}/>
             <Text style={{marginTop:1,color:'#454B1B',fontFamily:'Lexend-Regular'}}>{course?.chapters?.length} Chapter</Text>
         </View>):
@@ -57,7 +57,7 @@ export default function CourseItem({ course }) {
           
         }}>
 
-        <MaterialCommunityIcons name="youtube" size={20} color="#990000"
+        <MaterialCommunityIcons name="youtube" size={20} color={Colors.YOUTUBE_ICON}
         style={{marginLeft:-4}}/>
           <Text style={{marginTop:1,color:'#454B1B',fontFamily:'Lexend-Regular'}}>Watch on YouTube</Text>
       </View>
