@@ -7,5 +7,6 @@ export default{
     YOUTUBE_ICON:'#990000', //dark red
     CHAPTER_ICON:'#454B1B', //green
     LOGIN_BUTTON: '#353935', //loginButton
+    LIGHT_WHITE:'#E2DFD2',   //lightWhite
     BACKGROUND_BUTTON:'#EFF3EA'//backgroundWhite
 }

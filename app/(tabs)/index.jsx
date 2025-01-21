@@ -15,6 +15,8 @@ import { useFonts } from 'expo-font';
 
 
 
+
+
 export default function HomeScreen() {
 
   const [loaded, error] = useFonts({
@@ -71,8 +73,11 @@ export default function HomeScreen() {
  }
 
   return (
+
+    
   <ScrollView>
     <View style={{padding: 20,marginTop:13}}>
+
       <Header/>
 
       {/* Category List */}

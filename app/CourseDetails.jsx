@@ -1,10 +1,16 @@
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
 import React, { useEffect } from 'react';
 import { useLocalSearchParams } from 'expo-router';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 import Colors from './Constants/Colors';
 import { useRouter } from 'expo-router';
 import CourseIntro from './Components/CourseIntro';
+import SourceSection from './Components/SourceSection';
+import EnrollmentSection from './Components/EnrollmentSection';
+import LessonSection from './Components/LessonSection';
+
+
+
 
 export default function CourseDetails() {
   const { course } = useLocalSearchParams();
@@ -24,8 +30,13 @@ export default function CourseDetails() {
     router.push('/'); // Route back to index page
   };
 
+  // //checking if user is enrolled in a course
+  // const checkIsUserEnrollToCourse=()=>{
+    
+  // }
+
   return (
-    <View>
+    <ScrollView>
       <View style={{display:'flex',alignItems:'center',flexDirection:'row',padding:15,marginLeft:10,gap:39}}>
 
     <TouchableOpacity onPress={mainRouterButton}>
@@ -35,7 +46,17 @@ export default function CourseDetails() {
       <Text style={{fontFamily:'Lexend-SemiBold',fontSize:26}}>Course Details</Text>
       </View>
 
+      {/* Course Intro Section */}
       <CourseIntro course={parsedCourse}/>
-    </View>
+
+      {/* Source Section */}
+      <SourceSection/>
+
+      {/* Enroll Section */}
+      <EnrollmentSection/>
+
+      {/* Enroll Section */}
+      <LessonSection course={parsedCourse}/>
+    </ScrollView>
   );
 }
