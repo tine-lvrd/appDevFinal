@@ -21,6 +21,7 @@ export default function Profile() {
 
 
   return (
+    // gagawa ng logout button na malaya kang idesignan
     <View>
       <Button title='Logout' onPress={handleLogout} />
     </View>
