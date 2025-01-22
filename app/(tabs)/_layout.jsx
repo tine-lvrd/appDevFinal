@@ -7,7 +7,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { useRouter } from 'expo-router';
 import { auth } from '../../config/FirebaseConfig';
 import { getLocalStorage } from '../../service/Storage';
-
+import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 
 
 
@@ -43,9 +43,9 @@ export default function TabLayout() {
             }}/>
         <Tabs.Screen name='MyCourse'
             options={{
-                tabBarLabel:'Course',
+                tabBarLabel:'Source',
                 tabBarIcon:({color,size})=>(
-                    <FontAwesome name="book" size={size} color={color} />
+                    <FontAwesome5 name="hand-sparkles" size={24} color={color} />
                 )
             }}/>
         <Tabs.Screen name='Profile'

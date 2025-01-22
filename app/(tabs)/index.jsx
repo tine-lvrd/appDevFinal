@@ -74,12 +74,12 @@ export default function HomeScreen() {
       <CourseList courseList={courseList}/>
 
       {/* Data Structure and Algorithm Course List */}
-      <SectionHeading heading={'Data Structure and Algorithm Course'}/>
-      <CourseList courseList={getFilterCourseList('java')}/>
+      <SectionHeading heading={'Programming Course'}/>
+      <CourseList courseList={getFilterCourseList('proglang')}/>
 
-      {/* Popular Courses */}
-      <SectionHeading heading={'Python  Courses'} />
-      <CourseList courseList={getFilterCourseList('tailwindcsss')} />
+      {/* Python Courses */}
+      <SectionHeading heading={'Database  Courses'} />
+      <CourseList courseList={getFilterCourseList('database')} />
 
       {/* Popular Courses */}
       <SectionHeading heading={'Object Oriented Programming'} />
