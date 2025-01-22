@@ -43,7 +43,7 @@ export default function TabLayout() {
             }}/>
         <Tabs.Screen name='MyCourse'
             options={{
-                tabBarLabel:'MyCourse',
+                tabBarLabel:'Course',
                 tabBarIcon:({color,size})=>(
                     <FontAwesome name="book" size={size} color={color} />
                 )

@@ -37,10 +37,7 @@ export default function CourseIntro({ course }) {
         <>
           <VideoView style={styles.video} player={player} resizeMode="cover" allowsFullscreen allowsPictureInPicture />
           <View style={styles.controlsContainer}>
-            {/* <Button
-              title={isPlaying ? 'Pause' : 'Play'}
-              onPress={handlePlayPause}
-            /> */}
+            
 
             <View style={{paddingTop:5,paddingLeft:5,paddingRight:8,display:'flex'}}>
               <Text style={{fontSize:20,fontFamily:'Lexend-Bold'}}>{course?.name}</Text>
@@ -94,12 +91,12 @@ export default function CourseIntro({ course }) {
                 gap: 4,
               }}
             >
-              <MaterialCommunityIcons
+              {/* <MaterialCommunityIcons
                 name="youtube"
                 size={20}
                 color={Colors.YOUTUBE_ICON}
                 style={{ marginLeft: -4 }}
-              />
+              /> */}
               <Text
                 style={{
                   marginTop: 1,

@@ -13,10 +13,14 @@ import LessonSection from './Components/LessonSection';
 
 
 export default function CourseDetails() {
+
+
+
   const { course } = useLocalSearchParams();
 
   // Parse the course object
   const parsedCourse = course ? JSON.parse(course) : null;
+
 
   useEffect(() => {
     if (parsedCourse) {
@@ -30,10 +34,14 @@ export default function CourseDetails() {
     router.push('/'); // Route back to index page
   };
 
+  
+
   // //checking if user is enrolled in a course
   // const checkIsUserEnrollToCourse=()=>{
     
   // }
+
+
 
   return (
     <ScrollView>
@@ -44,7 +52,9 @@ export default function CourseDetails() {
     </TouchableOpacity>
       
       <Text style={{fontFamily:'Lexend-SemiBold',fontSize:26}}>Course Details</Text>
+      
       </View>
+      
 
       {/* Course Intro Section */}
       <CourseIntro course={parsedCourse}/>
@@ -53,10 +63,13 @@ export default function CourseDetails() {
       <SourceSection/>
 
       {/* Enroll Section */}
-      <EnrollmentSection/>
+      <EnrollmentSection course={parsedCourse}/>
 
       {/* Enroll Section */}
       <LessonSection course={parsedCourse}/>
+
+      
     </ScrollView>
+
   );
 }

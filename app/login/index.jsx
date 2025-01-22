@@ -9,6 +9,9 @@ export default function LoginScreen() {
 
     const router=useRouter();
   return (
+
+    
+
     <View style={{display:'flex',alignItems:'center',marginTop:50,}}>
       <View>
         <Image style={styles?.image} source={require('./../../assets/images/loginImage.jpg')}/>
@@ -35,6 +38,8 @@ export default function LoginScreen() {
       </TouchableOpacity>
       </View>
     </View>
+
+    
   )
 }
 

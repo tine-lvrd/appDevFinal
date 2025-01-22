@@ -72,8 +72,27 @@ const checkUserCourseEnrollment=async(slug,email)=>{
     return result;
 }
 
+// const markChapterCompleted=async(recordId,chapterId)=>{
+//   const query=gql`
+//   mutation MyMutation {
+//   updateUserEnrollCourse(
+//     data: {completedChapter: {create: {CompletedChapter: {data: {chapterId: ""}}}}}
+//     where: {id: ""}
+//   ) {
+//     id
+//   }
+//   publishManyUserEnrollCourses {
+//     count
+//   }
+// }`
+
+//     const result=await request(MASTER_URL,query)
+//     return result;
+// }
+
 export default{
     getCategory,
     getCourseList,
-    checkUserCourseEnrollment
+    checkUserCourseEnrollment,
+    //markChapterCompleted
 }

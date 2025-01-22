@@ -1,4 +1,4 @@
-import { View, Text, FlatList, TouchableOpacity } from 'react-native'
+import { View, Text, FlatList, TouchableOpacity, StyleSheet } from 'react-native'
 import React from 'react'
 import SectionHeading from './SectionHeading'
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
@@ -7,19 +7,20 @@ import { useState } from 'react';
 
 
 
-export default function LessonSection({course}) {
+export default function LessonSection({course,onChapterSelect,selectedChapter={}}) {
     const [isEnrolled,setIsEnrolled]=useState(true);
+
     
   return (
     <View style={{padding:10,margin:5}}>
         <SectionHeading heading={'Lessons'}/>
       <FlatList
         data={course?.chapters}
+        showsVerticalScrollIndicator={false}
         renderItem={({item, index})=>(
-            <TouchableOpacity style={{display:'flex',flexDirection:'row',
-                justifyContent:'space-between',alignItems:'center',padding:15,
-                borderWidth:0.4,marginBottom:10,borderRadius:10,
-            }}>
+            <TouchableOpacity 
+            onPress={()=>onChapterSelect(item)}
+            style={[styles.chapterContainer,selectedChapter==item&&{backgroundColor:Colors.TEXT}]}>
                 
                 <View style={{display:'flex',flexDirection:'row',gap:10,
                     alignItems:'center'
@@ -50,3 +51,16 @@ export default function LessonSection({course}) {
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+  chapterContainer:{
+    display:'flex',
+    flexDirection:'row',
+    justifyContent:'space-between',
+    alignItems:'center',
+    padding:15,
+    borderWidth:0.4,
+    marginBottom:10,
+    borderRadius:10,
+}
+})

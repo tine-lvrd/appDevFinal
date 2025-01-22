@@ -1,10 +1,6 @@
 import { View, Text, Button, StyleSheet, ScrollView } from 'react-native'
 import React from 'react'
-import { signOut } from 'firebase/auth'
-import { auth } from '../../config/FirebaseConfig'
-import { Redirect } from 'expo-router'
 import { useRouter } from 'expo-router'
-import { RemoveLocalStorage } from '../../service/Storage'
 import Header from '../Components/Header'
 import GlobalApi from '../Constants/GlobalApi'
 import { useEffect, useState } from 'react'
@@ -51,16 +47,6 @@ export default function HomeScreen() {
     }
   };
 
-  const handleLogout = async () => {
-    try {
-      await signOut(auth);
-      await RemoveLocalStorage('userDetail');
-      router.replace('/login'); // Redirect to login screen
-    } catch (error) {
-      console.error('Logout failed: ', error);
-    }
-  };
-
  const getCourseList=()=>{
   GlobalApi.getCourseList().then(resp=>{
     setCourseList(resp?.courseLists)
@@ -88,14 +74,18 @@ export default function HomeScreen() {
       <CourseList courseList={courseList}/>
 
       {/* Data Structure and Algorithm Course List */}
-      <SectionHeading heading={'JavaScript Course'}/>
-      <CourseList courseList={getFilterCourseList('javascript')}/>
+      <SectionHeading heading={'Data Structure and Algorithm Course'}/>
+      <CourseList courseList={getFilterCourseList('java')}/>
 
       {/* Popular Courses */}
-      <SectionHeading heading={'Popular Courses'} />
+      <SectionHeading heading={'Python  Courses'} />
+      <CourseList courseList={getFilterCourseList('tailwindcsss')} />
+
+      {/* Popular Courses */}
+      <SectionHeading heading={'Object Oriented Programming'} />
       <CourseList courseList={getFilterCourseList('tailwindcsss')} />
       
-      <Button title='Logout' onPress={handleLogout} />
+      
     </View>
   </ScrollView>
 
