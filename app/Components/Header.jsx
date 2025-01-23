@@ -64,16 +64,11 @@ export default function Header() {
 </View>
 
 
-      
 
-      {/* <View>
-        <AntDesign name="setting" size={24} color={Colors.PRIMARY}/>
-      </View> */}
-
-    <View style={styles.placeholder}>
+    {/* <View style={styles.placeholder}>
         <AntDesign style={{marginLeft:5}}name="search1" size={24} color={Colors.CHAPTER_ICON} />
         <TextInput style={{fontSize:16,fontFamily:'Lexend-ExtraLight'}}placeholder='Search'/>
-    </View>
+    </View> */}
     
     
     </View>

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Colors from '../Constants/Colors';
 import SectionHeading from './SectionHeading';
 
-export default function CategoryList({ categories }) {
+export default function CategoryList({ categories,setSelectedCategory }) {
   const [activeIndex, setActiveIndex] = useState(null); // Ensure null is the initial state
 
   return (
@@ -24,7 +24,9 @@ export default function CategoryList({ categories }) {
                 borderColor:Colors.TEXTHEADING
               },
             ]}
-            onPress={() => setActiveIndex(index)} // Update activeIndex on press
+            onPress={() => {setActiveIndex(index);
+              setSelectedCategory(item.slug)
+            }} // Update activeIndex on press
           >
             <Image
               source={{ uri: item?.icon?.url }}

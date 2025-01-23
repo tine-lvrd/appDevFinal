@@ -31,7 +31,7 @@ export default function HomeScreen() {
 
   const [categories,setCategories]=useState([]);
   const [courseList,setCourseList]=useState([]);
-
+  const [orgCourseList,setOrgCourseList]=useState([]);
   useEffect(()=>{
     getCategory();
     getCourseList();
@@ -50,6 +50,7 @@ export default function HomeScreen() {
  const getCourseList=()=>{
   GlobalApi.getCourseList().then(resp=>{
     setCourseList(resp?.courseLists)
+    setOrgCourseList(resp?.courseLists);
   })  
  }
 
@@ -57,6 +58,11 @@ export default function HomeScreen() {
     const result=courseList.filter((item)=>item.tag.includes(tag));
     return result;
  }
+
+ const filterCourseList=(category)=>{
+    const result = orgCourseList.filter((item)=>item.tag.includes(category));
+    setCourseList(result)
+  }
 
   return (
 
@@ -67,7 +73,8 @@ export default function HomeScreen() {
       <Header/>
 
       {/* Category List */}
-      <CategoryList categories={categories}/>
+      <CategoryList categories={categories}
+      setSelectedCategory={(category)=>filterCourseList(category)}/>
 
       {/* All Course List */}
       <SectionHeading heading={'Latest Courses'}/>
@@ -83,7 +90,7 @@ export default function HomeScreen() {
 
       {/* Popular Courses */}
       <SectionHeading heading={'Object Oriented Programming'} />
-      <CourseList courseList={getFilterCourseList('tailwindcsss')} />
+      <CourseList courseList={getFilterCourseList('python')} />
       
       
     </View>
