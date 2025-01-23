@@ -28,7 +28,7 @@ export default function LoginScreen() {
               style={{
                 color:Colors.CHAPTER_ICON, 
                 fontWeight:'bold'}}
-                >Learn Hub</Text></Text>
+                >Learn Hub1</Text></Text>
             <Text style={{color:Colors.PRIMARY, fontFamily:'Lexend-Regular',fontSize:15, textAlign:'center'}}>
               Learn Programming Through Video: Where Knowledge Comes to Life and Skills Shape the Future!
             </Text>
