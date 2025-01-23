@@ -44,6 +44,7 @@ export default function signIn() {
     
   return (
     <View style={{padding: 25}}>
+<<<<<<< HEAD
 
       <View style={styles.containerSignIn}>
         <Image style={styles.signIn} source={require('./../../assets/images/signIn.png')}/>
@@ -52,6 +53,12 @@ export default function signIn() {
         <Text style={{color:Colors.CHAPTER_ICON,fontFamily:'Lexend-Bold'}}> LearnMate!</Text></Text>
       </View>
       
+=======
+      <Text style={styles.textHeader}>Lets Sign You In1111!</Text>
+      <Text style={styles.subHeader}>Welcome Back  
+        <Text style={{color:Colors.PRIMARY, fontWeight:'bold'}}> LearnMate!</Text></Text>
+      <Text style={styles.text}>Good to See You Again</Text>
+>>>>>>> 2426da7ff74b155402a23b1c9ce92e61b0cb2e2f
 
       <View>
         <TextInput placeholder='Email' style={styles.textInput}

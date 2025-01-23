@@ -1,6 +1,7 @@
 import { View, Text, Button, StyleSheet, ScrollView } from 'react-native'
 import React from 'react'
 import { useRouter } from 'expo-router'
+<<<<<<< HEAD
 import Header from '../Components/Header'
 import GlobalApi from '../Constants/GlobalApi'
 import { useEffect, useState } from 'react'
@@ -13,6 +14,11 @@ import { useFonts } from 'expo-font';
 
 
 
+=======
+import { RemoveLocalStorage } from '../../service/Storage'
+import GlobalApi from './../Utils/GlobalApi' //needs editing (steven)
+import CategoryList from '../Component(addkomuna(steven)/CategoryList'
+>>>>>>> 2426da7ff74b155402a23b1c9ce92e61b0cb2e2f
 export default function HomeScreen() {
 
   const [loaded, error] = useFonts({
@@ -28,6 +34,10 @@ export default function HomeScreen() {
   });
 
   const router = useRouter();
+  const [categories,setCategories]=useState();
+  useEffect(()=>{ //marker (steven(needs fixing ren))
+    getCategory();
+  },[]) 
 
   const [categories,setCategories]=useState([]);
   const [courseList,setCourseList]=useState([]);
@@ -45,7 +55,15 @@ export default function HomeScreen() {
     } catch (error) {
       console.error('Error fetching categories:', error);
     }
+
+  
   };
+  //Get Category List (steven(needs fixing ren))
+  const getCategory=()=>{
+    GlobalApi.getCategory().then(resp=>{
+    setCategories(resp.categories);
+    })
+  }
 
  const getCourseList=()=>{
   GlobalApi.getCourseList().then(resp=>{
@@ -93,6 +111,12 @@ export default function HomeScreen() {
       <CourseList courseList={getFilterCourseList('python')} />
       
       
+<<<<<<< HEAD
+=======
+      <CategoryList categories={categories}/>
+
+      <Button title='Logout' onPress={handleLogout} />
+>>>>>>> 2426da7ff74b155402a23b1c9ce92e61b0cb2e2f
     </View>
   </ScrollView>
 
